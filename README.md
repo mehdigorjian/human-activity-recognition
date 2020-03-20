@@ -42,5 +42,9 @@ or use:
 
 ## Run
 
+1- Before running the code, download the pre-trained Model and the binarized Labels from this [link](https://drive.google.com/drive/folders/14ly0meHnHMOCxciVzblcNhQsX0fD_aaP?usp=sharing) add add it to the folder.
+2- Create an empty folder called `output` for the code output.
+3- Create a folder called `example_clips` and put your test videos in it.
+
 `python predict_video.py --model model/activity.model --label-bin model/lb.pickle --input` **YOUR VIDEO PATH** `--output output/`**ARBITRARY NAME**`.avi --action` **drinking/cooking** `--size 128`
 
