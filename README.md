@@ -21,7 +21,7 @@ Action Recognition Deep Learning Project
 
 ### Run
 
-- Create a folder called `model`, download the **pre-trained Model** and the **binarized Labels** from this [>>link<<](https://drive.google.com/drive/folders/14ly0meHnHMOCxciVzblcNhQsX0fD_aaP?usp=sharing) and add the files to the **model** folder.
+- Create a folder called `model`, download the **pre-trained model** and the **binarized Labels** from this [>>link<<](https://drive.google.com/drive/folders/14ly0meHnHMOCxciVzblcNhQsX0fD_aaP?usp=sharing) and add the files to the **model** folder.
 - Create a folder called `output` for the code output.
 - Create a folder called `example_clips` and put your test videos in it.
 
