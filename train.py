@@ -1,9 +1,8 @@
 # USAGE
-# python train.py --dataset Sports-Type-Classifier/data --model model/activity.model --label_bin model/lb.pickle --epochs 50
+# TO RUN THE CODE: python train.py --data dataset --model output/activity.model --label_bin output/lb.pickle --plot output/fig_v1.png --epochs 50
 # set the matplotlib backend so figures can be saved in the background
 import matplotlib
 matplotlib.use("Agg")
-
 # import the necessary packages
 from keras.preprocessing.image import ImageDataGenerator
 from keras.layers.pooling import AveragePooling2D
@@ -15,6 +14,7 @@ from keras.layers import Input
 from keras.models import Model
 from keras.optimizers import SGD
 from keras.utils import to_categorical
+from keras.callbacks import EarlyStopping, TensorBoard, History, ModelCheckpoint
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, confusion_matrix
@@ -22,9 +22,12 @@ from imutils import paths
 import matplotlib.pyplot as plt
 import numpy as np
 import argparse
+import warnings
 import pickle
+import time
 import cv2
 import os
+BATCH_SIZE = 32
 # construct the argument parser and parse the arguments
 parse = argparse.ArgumentParser()
 parse.add_argument("-d", "--data", required=True,
@@ -83,7 +86,6 @@ labels = lb.fit_transform(labels)
 labels = to_categorical(labels)
 # print('labels after one-hot: ', labels)
 
-
 # partition the data into training and testing splits using 75% of
 # the data for training and the remaining 25% for testing
 print('[INFO] splitting data...')
@@ -114,10 +116,16 @@ trainAug.mean = mean
 valAug.mean = mean
 
 # train and test generators
-train_generator = trainAug.flow(trainX, trainY, batch_size=32)
+train_generator = trainAug.flow(trainX, trainY, batch_size=BATCH_SIZE)
 validation_generator = valAug.flow(testX, testY)
 # load the ResNet-50 network, ensuring the head FC layer sets are left
 # off
+# ignore warnings
+warnings.filterwarnings("ignore")
+
+# using tensorboard
+tensorboard = TensorBoard(log_dir=f'logs/{time.time()}', batch_size=BATCH_SIZE)
+
 # baseModel = ResNet50(include_top=False, weights="imagenet",
 	# input_tensor=Input(shape=(224, 224, 3)))
 baseModel = ResNet50(include_top=False, weights="imagenet", input_tensor=Input(shape=(224, 224, 3)), input_shape=(244,244,3)) #
@@ -146,22 +154,23 @@ opt = SGD(lr=1e-4, momentum=0.9, decay=1e-4 / args.epochs)
 model.compile(loss="categorical_crossentropy", optimizer=opt,
 	metrics=["accuracy"])
 
+# es_callbacks = EarlyStopping('val_loss', mode='min', restore_best_weights=True)
+check_point = ModelCheckpoint(filepath='weights/weights.hdf5',  save_best_only=True, monitor='val_loss', mode='min', verbose=1)
+
 # train the head of the network for a few epochs (all other layers
 # are frozen) -- this will allow the new FC layers to start to become
 # initialized with actual "learned" values versus pure random
 print("[INFO] training head...")
-H = model.fit_generator(train_generator, steps_per_epoch=len(trainX) // 32, validation_data=validation_generator, validation_steps=len(testX) // 32, epochs=args.epochs)
+H = History()
+model.fit_generator(train_generator, steps_per_epoch=len(trainX) // 32, validation_data=validation_generator, validation_steps=len(testX) // 32, epochs=args.epochs, callbacks=[H, tensorboard, check_point])
 
 # evaluate the network
 print("[INFO] evaluating network...")
-predictions = model.predict(testX, batch_size=32)
+predictions = model.predict(testX, batch_size=BATCH_SIZE)
 
 print(classification_report(testY.argmax(axis=1),
 	predictions.argmax(axis=1), target_names=lb.classes_))
 
-
-
-# print(H.history)
 # plot the training loss and accuracy
 N = args.epochs
 plt.style.use("ggplot")
@@ -170,12 +179,12 @@ plt.plot(np.arange(0, N), H.history["loss"], label="train_loss")
 plt.plot(np.arange(0, N), H.history["val_loss"], label="val_loss")
 plt.plot(np.arange(0, N), H.history["accuracy"], label="train_acc")
 plt.plot(np.arange(0, N), H.history["val_accuracy"], label="val_acc")
+
 plt.title("Training Loss and Accuracy on Dataset")
 plt.xlabel("Epoch #")
 plt.ylabel("Loss | Accuracy")
 plt.legend(loc="lower left")
 plt.savefig(args.plot)
-
 # serialize the model to disk
 print("[INFO] serializing network...")
 model.save(args.model)
@@ -186,10 +195,7 @@ f.write(pickle.dumps(lb))
 f.close()
 print('[INFO] model saved!')
 
-# TO RUN THE CODE: python train.py --data dataset --model output/activity.model --label_bin output/lb.pickle --epochs 50
+# -------------------------------------------------TESTING RUNS
+#RUN ON THE FLOYDHUB: python train.py --data /floyd/input/dlaction --model output/activity.model --label_bin output/lb.pickle --plot output/fig_v1.png --epochs 50
 
-# python train.py --data /floyd/input/dlaction --model output/activity.model --label_bin output/lb.pickle --epochs 50
-
-
-
-
+# TO DEBUG ON THE LOCAL SYSTEM: python train.py --data dataset_temp --model output_temp/activity.model --label_bin output_temp/lb.pickle --plot output_temp/_plot1.png --epochs 1

@@ -64,6 +64,7 @@ while True:
 	# ordering, resize the frame to a fixed 224x224, and then
 	# perform mean subtraction
 	output = frame.copy()
+	# output = cv2.resize(frame.copy(), (244,244))
 	frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 	frame = cv2.resize(frame, (224, 224)).astype("float32")
 	frame -= mean
@@ -86,9 +87,12 @@ while True:
 		timeStamps.append([round(ts, 16), round(max(results), 5)])
 
 	# draw the activity on the output frame
-	text = "activity: {}".format(label)
-	cv2.putText(output, text, (35, 50), cv2.FONT_HERSHEY_SIMPLEX,
-		1.25, (0, 255, 0), 2)
+		text = "activity: {}".format(label)
+		cv2.putText(output, text, (10, 25), cv2.FONT_HERSHEY_SIMPLEX,0.6, (0, 255, 0), 2)
+	else:
+		cv2.putText(output, 'computing...', (10, 25), cv2.FONT_HERSHEY_SIMPLEX,0.6, (0, 0, 255), 2)
+	# cv2.putText(output, text, (35, 50), cv2.FONT_HERSHEY_SIMPLEX,
+		# 1.25, (0, 255, 0), 2)
 
 	# check if the video writer is None
 	if writer is None:
@@ -131,4 +135,4 @@ print("[INFO] DONE...")
 
 
 
-# python predict_video.py --model model/activity.model --label-bin model/lb.pickle --input example_clips/c.mp4 --output output/c_128avg.avi --action cooking --size 128
+# python predict_video.py --model model/model_v5/activity.model --label-bin model/model_v5/lb.pickle --input example_clips/v5/cook5.mp4 --output output/output_v5/c5_v5.avi --action cooking --size 128
