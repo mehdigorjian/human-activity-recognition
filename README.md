@@ -23,20 +23,17 @@ or use:
 - `"-a", "--action":` choose a predictive action from this list (`drinking, cooking`). This name will be used in labeling the JSON file and the output figure y_label.
 
 
-#### Instruction Video: (https://youtu.be/Dvp9Gt67u_0)
-#### Drinking Video Samples:
-- drink1: (https://youtu.be/epeNAmsSaT8)
-- drink2: (https://youtu.be/Me9ukITLTfk)
-- drink3: (https://youtu.be/E8W2hXuCivw)
-- drink4: (https://youtu.be/JCjt7vHeY_U)
-- drink5: (https://youtu.be/LGWF0j00oMI)
+#### Instruction Video: [LINK](https://youtu.be/Dvp9Gt67u_0)
 
-#### Cooking Video Samples:
-- cook1: (https://youtu.be/fcBFr5MDm-Y)
-- cook2: (https://youtu.be/oiKxjYLTDHA)
-- cook3: (https://youtu.be/0Cac3yVfR7E)
-- cook4: (https://youtu.be/jElkBPTWpSU)
-- cook5: (https://youtu.be/2DGt6KwJVSQ)
+|Project 4                                                                   |
+|:--------------------------------------------------------------------------:|
+|Drinking Video Samples                |Cooking Video Samples                |
+|[drink1](https://youtu.be/epeNAmsSaT8)|[cook1](https://youtu.be/fcBFr5MDm-Y)|
+|[drink2](https://youtu.be/Me9ukITLTfk)|[cook2](https://youtu.be/oiKxjYLTDHA)|
+|[drink3](https://youtu.be/E8W2hXuCivw)|[cook3](https://youtu.be/0Cac3yVfR7E)|
+|[drink4](https://youtu.be/JCjt7vHeY_U)|[cook4](https://youtu.be/jElkBPTWpSU)|
+|[drink5](https://youtu.be/LGWF0j00oMI)|[cook5](https://youtu.be/2DGt6KwJVSQ)|
+
 
 
 ## Run
