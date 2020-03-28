@@ -25,9 +25,9 @@ or use:
 
 #### Instruction Video: [LINK](https://youtu.be/Dvp9Gt67u_0)
 
-|Project 4                                                                   |
-|:--------------------------------------------------------------------------:|
+
 |Drinking Video Samples                |Cooking Video Samples                |
+|:------------------------------------:|:-----------------------------------:|
 |[drink1](https://youtu.be/epeNAmsSaT8)|[cook1](https://youtu.be/fcBFr5MDm-Y)|
 |[drink2](https://youtu.be/Me9ukITLTfk)|[cook2](https://youtu.be/oiKxjYLTDHA)|
 |[drink3](https://youtu.be/E8W2hXuCivw)|[cook3](https://youtu.be/0Cac3yVfR7E)|
