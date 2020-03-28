@@ -55,7 +55,7 @@ If you want to check the labeled videos (saved after runnig the prediction), I h
 
 |Labeled Drinking Video Samples        |Labeled Cooking Video Samples        |
 |:------------------------------------:|:-----------------------------------:|
-|[drinking sample videos folder](https://drive.google.com/drive/folders/1jdfmDKWDQyEzrk9WoRg5HnojnJgxibMy?usp=sharing)|[cooking sample videos folder](https://drive.google.com/drive/folders/11xIB3F6CTnzxgs_yk8IiTPVukiS2nzQN?usp=sharing)|
+|[drinking labeled videos folder](https://drive.google.com/drive/folders/1jdfmDKWDQyEzrk9WoRg5HnojnJgxibMy?usp=sharing)|[cooking labeled videos folder](https://drive.google.com/drive/folders/11xIB3F6CTnzxgs_yk8IiTPVukiS2nzQN?usp=sharing)|
 
 ***
 
