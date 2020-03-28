@@ -47,11 +47,7 @@ Action Recognition Deep Learning Project
 
 |Drinking Video Samples                |Cooking Video Samples                |
 |:------------------------------------:|:-----------------------------------:|
-|[drink1](https://youtu.be/epeNAmsSaT8)|[cook1](https://youtu.be/fcBFr5MDm-Y)|
-|[drink2](https://youtu.be/Me9ukITLTfk)|[cook2](https://youtu.be/oiKxjYLTDHA)|
-|[drink3](https://youtu.be/E8W2hXuCivw)|[cook3](https://youtu.be/0Cac3yVfR7E)|
-|[drink4](https://youtu.be/JCjt7vHeY_U)|[cook4](https://youtu.be/jElkBPTWpSU)|
-|[drink5](https://youtu.be/LGWF0j00oMI)|[cook5](https://youtu.be/2DGt6KwJVSQ)|
+|[drinking sample videos folder](https://drive.google.com/drive/folders/1Ia1E0FSuP2wjPI6v4mkWy1F-L9kGGTGL?usp=sharing)|[cooking sample videos folder](https://drive.google.com/drive/folders/1HUQXfsD-nGB3kqrDES26gJfrShpygTfn?usp=sharing)|
 
 ***
 
