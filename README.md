@@ -32,9 +32,7 @@ Action Recognition Deep Learning Project
 
 ### Project IV
 
-- Report: 
-1. [drinking](https://drive.google.com/file/d/1YqWGvZUGXuv7tw1MbpSnm9rByBTuu8Ob/view?usp=sharing)
-2. [cooking](https://drive.google.com/file/d/1vGiTdP4TwbFTYxhbpMdxjYWJG0ZPDahq/view?usp=sharing)
+- #### Report: 1. [drinking](https://drive.google.com/file/d/1YqWGvZUGXuv7tw1MbpSnm9rByBTuu8Ob/view?usp=sharing) 2. [cooking](https://drive.google.com/file/d/1vGiTdP4TwbFTYxhbpMdxjYWJG0ZPDahq/view?usp=sharing)
 
 |Drinking Video Samples                |Cooking Video Samples                |
 |:------------------------------------:|:-----------------------------------:|
