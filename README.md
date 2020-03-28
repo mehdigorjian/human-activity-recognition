@@ -21,12 +21,11 @@ Action Recognition Deep Learning Project
 
 ### Run
 
-- Create three folders: **model**, **output** and **example_clips** 
-- Before running the code, download the *pre-trained Model* and the *binarized Labels* from this [>>link<<](https://drive.google.com/drive/folders/14ly0meHnHMOCxciVzblcNhQsX0fD_aaP?usp=sharing) and add it to the *model* folder.
-- Create an empty folder called `output` for the code output.
+- Create a folder called `model`, download the **pre-trained Model** and the **binarized Labels** from this [>>link<<](https://drive.google.com/drive/folders/14ly0meHnHMOCxciVzblcNhQsX0fD_aaP?usp=sharing) and add the files to the **model** folder.
+- Create a folder called `output` for the code output.
 - Create a folder called `example_clips` and put your test videos in it.
 
-`python predict_video.py --model model/activity.model --label-bin model/lb.pickle --input` **YOUR VIDEO PATH** `--output output/`**ARBITRARY NAME**`.avi --action` **drinking/cooking** `--size 128`
+`python predict_video.py --model model/activity.model --label-bin model/lb.pickle --input example_clips/` **VIDEO NAME** `.MP4 --output output/`**ARBITRARY NAME**`.avi --action` **drinking/cooking** `--size 128`
 
 ***
 
