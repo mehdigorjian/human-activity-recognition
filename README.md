@@ -45,6 +45,8 @@ Action Recognition Deep Learning Project
 
 ### Project V
 
+- #### Report: [drinking-cooking](https://drive.google.com/file/d/1IEA0TS9BO23_ImJfQxWgsdUvnWLZsXSJ/view?usp=sharing)
+
 |Drinking Video Samples                |Cooking Video Samples                |
 |:------------------------------------:|:-----------------------------------:|
 |[drinking sample videos folder](https://drive.google.com/drive/folders/1Ia1E0FSuP2wjPI6v4mkWy1F-L9kGGTGL?usp=sharing)|[cooking sample videos folder](https://drive.google.com/drive/folders/1HUQXfsD-nGB3kqrDES26gJfrShpygTfn?usp=sharing)|
