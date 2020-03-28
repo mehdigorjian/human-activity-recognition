@@ -3,7 +3,6 @@ Action Recognition Deep Learning Project
 
 ## Requirements
 
-- tensorflow==2.0.0
 - Keras==2.3.1
 - matplotlib==3.1.3
 - numpy==1.18.1
