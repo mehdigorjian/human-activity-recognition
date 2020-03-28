@@ -51,6 +51,12 @@ Action Recognition Deep Learning Project
 |:------------------------------------:|:-----------------------------------:|
 |[drinking sample videos folder](https://drive.google.com/drive/folders/1Ia1E0FSuP2wjPI6v4mkWy1F-L9kGGTGL?usp=sharing)|[cooking sample videos folder](https://drive.google.com/drive/folders/1HUQXfsD-nGB3kqrDES26gJfrShpygTfn?usp=sharing)|
 
+If you want to check the labeled videos (saved after runnig the prediction), I have put the link here:
+
+|Labeled Drinking Video Samples        |Labeled Cooking Video Samples        |
+|:------------------------------------:|:-----------------------------------:|
+|[drinking sample videos folder](https://drive.google.com/drive/folders/1jdfmDKWDQyEzrk9WoRg5HnojnJgxibMy?usp=sharing)|[cooking sample videos folder](https://drive.google.com/drive/folders/11xIB3F6CTnzxgs_yk8IiTPVukiS2nzQN?usp=sharing)|
+
 ***
 
 
