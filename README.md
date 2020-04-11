@@ -21,7 +21,7 @@ Action Recognition Deep Learning Project
 
 ### Run
 
-- Create a folder called `model`, download the **pre-trained model** and the **binarized Labels** from this [>>link<<](https://drive.google.com/drive/folders/14ly0meHnHMOCxciVzblcNhQsX0fD_aaP?usp=sharing) and add the files to the **model** folder.
+- Create a folder called `model`, download the **pre-trained model** and the **binarized Labels** from this [>>link<<](https://drive.google.com/drive/folders/1Yq9qV1FKR52_My2GyYxNhC0UDJjKMqvk?usp=sharing) and add the files to the **model** folder.
 - Create a folder called `output` for the code output.
 - Create a folder called `example_clips` and put your test videos in it.
 
@@ -58,5 +58,19 @@ If you want to check the labeled videos (saved after running the prediction), I 
 |[drinking labeled videos folder](https://drive.google.com/drive/folders/1jdfmDKWDQyEzrk9WoRg5HnojnJgxibMy?usp=sharing)|[cooking labeled videos folder](https://drive.google.com/drive/folders/11xIB3F6CTnzxgs_yk8IiTPVukiS2nzQN?usp=sharing)|
 
 ***
+
+### Project VI
+
+- #### Report: [drinking-cooking](https://drive.google.com/file/d/12SLyjMB4cKyIEqon9DNHZJ-Cv7uuXavY/view?usp=sharing)
+
+|Drinking Video Samples                |Cooking Video Samples                |
+|:------------------------------------:|:-----------------------------------:|
+|[drinking sample videos folder](https://drive.google.com/drive/folders/1-hPmrMcRXOzsVaj9jO7G8YZ3EvuG-MAR?usp=sharing)|[cooking sample videos folder](https://drive.google.com/drive/folders/1S4zkW2iItfO1sgCapEnG-jjW-fxa2m3U?usp=sharing)|
+
+If you want to check the labeled videos (saved after running the prediction), I have put the link here:
+
+|Labeled Drinking Video Samples        |Labeled Cooking Video Samples        |
+|:------------------------------------:|:-----------------------------------:|
+|[drinking labeled videos folder](https://drive.google.com/drive/folders/1jdfmDKWDQyEzrk9WoRg5HnojnJgxibMy?usp=sharing)|[cooking labeled videos folder](https://drive.google.com/drive/folders/11xIB3F6CTnzxgs_yk8IiTPVukiS2nzQN?usp=sharing)|
 
 
