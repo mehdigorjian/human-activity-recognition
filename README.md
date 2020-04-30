@@ -28,7 +28,7 @@ Action Recognition Deep Learning Project
 `python predict_video.py --model model/activity.model --label-bin model/lb.pickle --input example_clips/` **VIDEO-NAME** `.MP4 --output output/`**ANY-NAME**`.avi --action` **drinking OR cooking** `--size 128`
 
 ***
-
+<!---
 ### Previous Projects
 
 - #### Report: 1. [drinking](https://drive.google.com/file/d/1YqWGvZUGXuv7tw1MbpSnm9rByBTuu8Ob/view?usp=sharing) 2. [cooking](https://drive.google.com/file/d/1vGiTdP4TwbFTYxhbpMdxjYWJG0ZPDahq/view?usp=sharing)
@@ -57,7 +57,7 @@ If you want to check the labeled videos (saved after running the prediction), I 
 |[drinking labeled videos folder](https://drive.google.com/drive/folders/1jdfmDKWDQyEzrk9WoRg5HnojnJgxibMy?usp=sharing)|[cooking labeled videos folder](https://drive.google.com/drive/folders/11xIB3F6CTnzxgs_yk8IiTPVukiS2nzQN?usp=sharing)|
 
 ***
-
+-->
 ### Final Project
 
 
