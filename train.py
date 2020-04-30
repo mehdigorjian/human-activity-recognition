@@ -1,5 +1,3 @@
-# USAGE
-# TO RUN THE CODE: python train.py --data dataset --model output/activity.model --label_bin output/lb.pickle --plot output/fig_v1.png --epochs 50
 # set the matplotlib backend so figures can be saved in the background
 import matplotlib
 matplotlib.use("Agg")
@@ -13,8 +11,9 @@ from keras.layers.core import Dense
 from keras.layers import Input
 from keras.models import Model
 from keras.optimizers import SGD
+from keras import regularizers
 from keras.utils import to_categorical
-from keras.callbacks import EarlyStopping, TensorBoard, History, ModelCheckpoint
+from keras.callbacks import EarlyStopping, TensorBoard, History, ModelCheckpoint, RemoteMonitor, ReduceLROnPlateau
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, confusion_matrix
@@ -124,17 +123,19 @@ validation_generator = valAug.flow(testX, testY)
 warnings.filterwarnings("ignore")
 
 # using tensorboard
-tensorboard = TensorBoard(log_dir=f'logs/{time.time()}', batch_size=BATCH_SIZE)
+# tensorboard = TensorBoard(log_dir=f'logs/{time.time()}', batch_size=BATCH_SIZE)
 
 # baseModel = ResNet50(include_top=False, weights="imagenet",
 	# input_tensor=Input(shape=(224, 224, 3)))
-baseModel = ResNet50(include_top=False, weights="imagenet", input_tensor=Input(shape=(224, 224, 3)), input_shape=(244,244,3)) #
+
+baseModel = ResNet50(include_top=False, weights="imagenet", input_tensor=Input(shape=(224, 224, 3)), input_shape=(244,244,3))
+
 # construct the head of the model that will be placed on top of the
 # the base model
 headModel = baseModel.output
 headModel = AveragePooling2D(pool_size=(7, 7))(headModel)
 headModel = Flatten()(headModel)
-headModel = Dense(512, activation="relu")(headModel)
+headModel = Dense(512, activation="relu", kernel_regularizer=regularizers.l1(0.01))(headModel)
 headModel = Dropout(0.5)(headModel)
 headModel = Dense(len(lb.classes_), activation="softmax")(headModel)
 
@@ -154,15 +155,19 @@ opt = SGD(lr=1e-4, momentum=0.9, decay=1e-4 / args.epochs)
 model.compile(loss="categorical_crossentropy", optimizer=opt,
 	metrics=["accuracy"])
 
-# es_callbacks = EarlyStopping('val_loss', mode='min', restore_best_weights=True)
-check_point = ModelCheckpoint(filepath='weights/weights.hdf5',  save_best_only=True, monitor='val_loss', mode='min', verbose=1)
+# reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.2, patience=5, min_lr=0.001)
+# es_callbacks = EarlyStopping(monitor='val_loss', mode='min', restore_best_weights=True, patience=10)
+# check_point = ModelCheckpoint(filepath='weights/weights.hdf5',  save_best_only=True, monitor='val_loss', mode='min', verbose=1)
 
 # train the head of the network for a few epochs (all other layers
 # are frozen) -- this will allow the new FC layers to start to become
 # initialized with actual "learned" values versus pure random
 print("[INFO] training head...")
-H = History()
-model.fit_generator(train_generator, steps_per_epoch=len(trainX) // 32, validation_data=validation_generator, validation_steps=len(testX) // 32, epochs=args.epochs, callbacks=[H, tensorboard, check_point])
+# H = History()
+# R = RemoteMonitor(root='http://localhost:9000', path='output_temp/', field='data')
+# model.fit_generator(train_generator, steps_per_epoch=len(trainX) // BATCH_SIZE, validation_data=validation_generator, validation_steps=len(testX) // BATCH_SIZE, epochs=args.epochs, callbacks=[H, tensorboard, check_point, es_callbacks, reduce_lr])
+
+H = model.fit_generator(train_generator, steps_per_epoch=len(trainX) // BATCH_SIZE, validation_data=validation_generator, validation_steps=len(testX) // BATCH_SIZE, epochs=args.epochs)
 
 # evaluate the network
 print("[INFO] evaluating network...")
@@ -172,19 +177,18 @@ print(classification_report(testY.argmax(axis=1),
 	predictions.argmax(axis=1), target_names=lb.classes_))
 
 # plot the training loss and accuracy
-N = args.epochs
 plt.style.use("ggplot")
 plt.figure()
-plt.plot(np.arange(0, N), H.history["loss"], label="train_loss")
-plt.plot(np.arange(0, N), H.history["val_loss"], label="val_loss")
-plt.plot(np.arange(0, N), H.history["accuracy"], label="train_acc")
-plt.plot(np.arange(0, N), H.history["val_accuracy"], label="val_acc")
-
+plt.plot(H.history["loss"], label="train_loss")
+plt.plot(H.history["val_loss"], label="val_loss")
+plt.plot(H.history["accuracy"], label="train_acc")
+plt.plot(H.history["val_accuracy"], label="val_acc")
 plt.title("Training Loss and Accuracy on Dataset")
 plt.xlabel("Epoch #")
 plt.ylabel("Loss | Accuracy")
 plt.legend(loc="lower left")
 plt.savefig(args.plot)
+
 # serialize the model to disk
 print("[INFO] serializing network...")
 model.save(args.model)
@@ -196,6 +200,8 @@ f.close()
 print('[INFO] model saved!')
 
 # -------------------------------------------------TESTING RUNS
-#RUN ON THE FLOYDHUB: python train.py --data /floyd/input/dlaction --model output/activity.model --label_bin output/lb.pickle --plot output/fig_v1.png --epochs 50
+# TO RUN ON FLOYDHUB: python train.py --data /floyd/input/dlaction --model output/activity.model --label_bin output/lb.pickle --plot output/fig_v1.png --epochs 35
 
 # TO DEBUG ON THE LOCAL SYSTEM: python train.py --data dataset_temp --model output_temp/activity.model --label_bin output_temp/lb.pickle --plot output_temp/_plot1.png --epochs 1
+
+# TO RUN THE CODE GENERALLY: python train.py --data dataset --model output/activity.model --label_bin output/lb.pickle --plot output/fig_v1.png --epochs 50
