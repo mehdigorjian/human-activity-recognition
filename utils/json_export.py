@@ -17,5 +17,5 @@ def to_json_file(dict_key, list_input):
 	jFile = {}
 	jFile[dict_key] = list_input
 	print(jFile)
-	with open('626001122.json', 'w+') as j:
+	with open('timeLable.json', 'w+') as j:
 		json.dump(jFile, j, cls=DataEncoder)
