@@ -27,16 +27,16 @@ Download these two video samples and place them in 'example_clips' folder.
 |:------------------------------------:|:-----------------------------------:|
 |[drinking sample video](https://drive.google.com/file/d/1NPF8moT1vHqpVVUDzWF9w4tPk8pa6xOg/view?usp=sharing)|[cooking sample video](https://drive.google.com/file/d/1gdkGiOgwjlw4SL0z_nYG2kZo8CZcONyI/view?usp=sharing)|
 
-### Run
+### Pre-Runing Instruction
 
 - Create a folder called `model`, download the **pre-trained model** [>>download link<<](https://drive.google.com/file/d/1V68ezH27WmSU0uAoITzemTNqE8tvM0h8/view?usp=sharing) and the **binarized Labels** [>>download link<<](https://drive.google.com/file/d/1VCa4NoTFjHTefBIzsx5RYOCVVHrBz2JM/view?usp=sharing) add place them into the **model** folder.
 - Create a folder called `output` for the code output.
 - Create a folder called `example_clips` and put the above 'video samples' together with your test videos in it.
 
-#### Drinking
+#### Running Drinking Activity
 `python predict_video.py --model model/activity.model --label-bin model/lb.pickle --input example_clips/` **VIDEO-NAME** `--output output/output_video.avi --action drinking --size 128`
 
-#### Cooking
+#### Running Cooking Activity
 `python predict_video.py --model model/activity.model --label-bin model/lb.pickle --input example_clips/` **VIDEO-NAME** `--output output/output_video.avi --action cooking --size 128`
 ***
 <!---
