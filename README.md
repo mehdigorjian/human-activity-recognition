@@ -25,8 +25,11 @@ Action Recognition Deep Learning Project
 - Create a folder called `output` for the code output.
 - Create a folder called `example_clips` and put your test videos in it.
 
-`python predict_video.py --model model/activity.model --label-bin model/lb.pickle --input example_clips/` **VIDEO-NAME** `.MP4 --output output/`**ANY-NAME**`.avi --action` **drinking OR cooking** `--size 128`
+#### Drinking
+`python predict_video.py --model model/activity.model --label-bin model/lb.pickle --input example_clips/` **VIDEO-NAME** `--output output/output_video.avi --action drinking --size 128`
 
+#### Cooking
+`python predict_video.py --model model/activity.model --label-bin model/lb.pickle --input example_clips/` **VIDEO-NAME** `--output output/output_video.avi --action cooking --size 128`
 ***
 <!---
 ### Previous Projects
