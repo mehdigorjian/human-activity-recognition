@@ -19,11 +19,19 @@ Action Recognition Deep Learning Project
 
 ***
 
+### Video Samples
+
+Download these two video samples and place them in 'example_clips' folder.
+
+|Drinking Video Sample                 |Cooking Video Sample                 |
+|:------------------------------------:|:-----------------------------------:|
+|[drinking sample video](https://drive.google.com/file/d/1NPF8moT1vHqpVVUDzWF9w4tPk8pa6xOg/view?usp=sharing)|[cooking sample video](https://drive.google.com/file/d/1gdkGiOgwjlw4SL0z_nYG2kZo8CZcONyI/view?usp=sharing)|
+
 ### Run
 
 - Create a folder called `model`, download the **pre-trained model** [>>download link<<](https://drive.google.com/file/d/1V68ezH27WmSU0uAoITzemTNqE8tvM0h8/view?usp=sharing) and the **binarized Labels** [>>download link<<](https://drive.google.com/file/d/1VCa4NoTFjHTefBIzsx5RYOCVVHrBz2JM/view?usp=sharing) add place them into the **model** folder.
 - Create a folder called `output` for the code output.
-- Create a folder called `example_clips` and put your test videos in it.
+- Create a folder called `example_clips` and put the above 'video samples' together with your test videos in it.
 
 #### Drinking
 `python predict_video.py --model model/activity.model --label-bin model/lb.pickle --input example_clips/` **VIDEO-NAME** `--output output/output_video.avi --action drinking --size 128`
@@ -60,14 +68,14 @@ If you want to check the labeled videos (saved after running the prediction), I 
 |[drinking labeled videos folder](https://drive.google.com/drive/folders/1jdfmDKWDQyEzrk9WoRg5HnojnJgxibMy?usp=sharing)|[cooking labeled videos folder](https://drive.google.com/drive/folders/11xIB3F6CTnzxgs_yk8IiTPVukiS2nzQN?usp=sharing)|
 
 ***
--->
+
 ### Final Project
 
 
 |Drinking Video Sample                 |Cooking Video Sample                 |
 |:------------------------------------:|:-----------------------------------:|
 |[drinking sample video](https://drive.google.com/file/d/1NPF8moT1vHqpVVUDzWF9w4tPk8pa6xOg/view?usp=sharing)|[cooking sample video](https://drive.google.com/file/d/1gdkGiOgwjlw4SL0z_nYG2kZo8CZcONyI/view?usp=sharing)|
-<!--
+
 If you want to check the labeled videos (saved after running the prediction), I have put the link here:
 
 |Labeled Drinking Video Samples        |Labeled Cooking Video Samples        |
