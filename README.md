@@ -61,14 +61,14 @@ If you want to check the labeled videos (saved after running the prediction), I 
 ### Final Project
 
 
-|Drinking Video Samples                |Cooking Video Samples                |
+|Drinking Video Sample                 |Cooking Video Sample                 |
 |:------------------------------------:|:-----------------------------------:|
-|[drinking sample videos folder](https://drive.google.com/drive/folders/1-hPmrMcRXOzsVaj9jO7G8YZ3EvuG-MAR?usp=sharing)|[cooking sample videos folder](https://drive.google.com/drive/folders/1S4zkW2iItfO1sgCapEnG-jjW-fxa2m3U?usp=sharing)|
-
+|[drinking sample video](https://drive.google.com/file/d/1NPF8moT1vHqpVVUDzWF9w4tPk8pa6xOg/view?usp=sharing)|[cooking sample video](https://drive.google.com/file/d/1gdkGiOgwjlw4SL0z_nYG2kZo8CZcONyI/view?usp=sharing)|
+<!--
 If you want to check the labeled videos (saved after running the prediction), I have put the link here:
 
 |Labeled Drinking Video Samples        |Labeled Cooking Video Samples        |
 |:------------------------------------:|:-----------------------------------:|
 |[drinking labeled videos folder](https://drive.google.com/drive/folders/1X9EyKr7c5asKmPLM-SbXKEfGpD3Qwbt3?usp=sharing)|[cooking labeled videos folder](https://drive.google.com/drive/folders/1LnQMSKGpw0MqJDFMml6gS4RfB5ZzgTJX?usp=sharing)|
-
+-->
 
