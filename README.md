@@ -19,17 +19,28 @@ Action Recognition Deep Learning Project
 
 ***
 
-### Run
+### **Video Samples**
 
-- Create a folder called `model`, download the **pre-trained model** and the **binarized Labels** from this [>>link<<](https://drive.google.com/drive/folders/1Yq9qV1FKR52_My2GyYxNhC0UDJjKMqvk?usp=sharing) and add the files to the **model** folder.
+Download these two video samples and place them in 'example_clips' folder.
+
+|Drinking Video Sample                 |Cooking Video Sample                 |
+|:------------------------------------:|:-----------------------------------:|
+|[drinking sample video](https://drive.google.com/file/d/1NPF8moT1vHqpVVUDzWF9w4tPk8pa6xOg/view?usp=sharing)|[cooking sample video](https://drive.google.com/file/d/1gdkGiOgwjlw4SL0z_nYG2kZo8CZcONyI/view?usp=sharing)|
+
+### **Pre-Runing Instruction**
+
+- Create a folder called `model`, download the **pre-trained model** [>>download link<<](https://drive.google.com/file/d/1V68ezH27WmSU0uAoITzemTNqE8tvM0h8/view?usp=sharing) and the **binarized Labels** [>>download link<<](https://drive.google.com/file/d/1VCa4NoTFjHTefBIzsx5RYOCVVHrBz2JM/view?usp=sharing) add place them into the **model** folder.
 - Create a folder called `output` for the code output.
-- Create a folder called `example_clips` and put your test videos in it.
+- Create a folder called `example_clips` and put the above 'video samples' together with your test videos in it.
 
-`python predict_video.py --model model/activity.model --label-bin model/lb.pickle --input example_clips/` **VIDEO-NAME** `.MP4 --output output/`**ANY-NAME**`.avi --action` **drinking OR cooking** `--size 128`
+#### **Running Drinking Activity**
+`python predict_video.py --model model/activity.model --label-bin model/lb.pickle --input example_clips/` **VIDEO-NAME** `--output output/output_video.avi --action drinking --size 128`
 
+#### **Running Cooking Activity**
+`python predict_video.py --model model/activity.model --label-bin model/lb.pickle --input example_clips/` **VIDEO-NAME** `--output output/output_video.avi --action cooking --size 128`
 ***
-
-### Project IV
+<!---
+### Previous Projects
 
 - #### Report: 1. [drinking](https://drive.google.com/file/d/1YqWGvZUGXuv7tw1MbpSnm9rByBTuu8Ob/view?usp=sharing) 2. [cooking](https://drive.google.com/file/d/1vGiTdP4TwbFTYxhbpMdxjYWJG0ZPDahq/view?usp=sharing)
 
@@ -43,7 +54,6 @@ Action Recognition Deep Learning Project
 
 ***
 
-### Project V
 
 - #### Report: [drinking-cooking](https://drive.google.com/file/d/1IEA0TS9BO23_ImJfQxWgsdUvnWLZsXSJ/view?usp=sharing)
 
@@ -59,18 +69,17 @@ If you want to check the labeled videos (saved after running the prediction), I 
 
 ***
 
-### Project VI
+### Final Project
 
-- #### Report: [drinking-cooking](https://drive.google.com/file/d/12SLyjMB4cKyIEqon9DNHZJ-Cv7uuXavY/view?usp=sharing)
 
-|Drinking Video Samples                |Cooking Video Samples                |
+|Drinking Video Sample                 |Cooking Video Sample                 |
 |:------------------------------------:|:-----------------------------------:|
-|[drinking sample videos folder](https://drive.google.com/drive/folders/1-hPmrMcRXOzsVaj9jO7G8YZ3EvuG-MAR?usp=sharing)|[cooking sample videos folder](https://drive.google.com/drive/folders/1S4zkW2iItfO1sgCapEnG-jjW-fxa2m3U?usp=sharing)|
+|[drinking sample video](https://drive.google.com/file/d/1NPF8moT1vHqpVVUDzWF9w4tPk8pa6xOg/view?usp=sharing)|[cooking sample video](https://drive.google.com/file/d/1gdkGiOgwjlw4SL0z_nYG2kZo8CZcONyI/view?usp=sharing)|
 
 If you want to check the labeled videos (saved after running the prediction), I have put the link here:
 
 |Labeled Drinking Video Samples        |Labeled Cooking Video Samples        |
 |:------------------------------------:|:-----------------------------------:|
 |[drinking labeled videos folder](https://drive.google.com/drive/folders/1X9EyKr7c5asKmPLM-SbXKEfGpD3Qwbt3?usp=sharing)|[cooking labeled videos folder](https://drive.google.com/drive/folders/1LnQMSKGpw0MqJDFMml6gS4RfB5ZzgTJX?usp=sharing)|
-
+-->
 
