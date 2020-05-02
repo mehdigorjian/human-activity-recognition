@@ -11,4 +11,4 @@ def fig_plot(x_param, y_param, label_name):
     plt.xlabel("time")
     plt.ylabel(label_name)
     plt.legend(loc="lower left")
-    plt.savefig('timeLable.jpg')
+    plt.savefig('output/626001122.jpg')
