@@ -3,7 +3,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
-def fig_plot(x_param, y_param, label_name):
+def fig_plot(x_param, y_param, label_name, fig_name):
     plt.style.use("ggplot")
     plt.figure()
     plt.plot(x_param, y_param, label="train_loss")
@@ -11,4 +11,4 @@ def fig_plot(x_param, y_param, label_name):
     plt.xlabel("time")
     plt.ylabel(label_name)
     plt.legend(loc="lower left")
-    plt.savefig('output/626001122.jpg')
+    plt.savefig('output/' + fig_name + '.jpg')
