@@ -9,7 +9,7 @@ class DataEncoder(json.JSONEncoder):
         return json.JSONEncoder.default(self, o)
 
 # writing json file as: timeLabel.json
-def to_json_file(dict_key, list_input):
+def to_json_file(dict_key, list_input, json_name):
 	if not isinstance(dict_key, str):
 		dict_key = str(dict_key)
 	if not isinstance(list_input, list):
@@ -17,5 +17,5 @@ def to_json_file(dict_key, list_input):
 	jFile = {}
 	jFile[dict_key] = list_input
 	print(jFile)
-	with open('output/626001122.json', 'w+') as j:
+	with open('output/' + json_name + '.json', 'w+') as j:
 		json.dump(jFile, j, cls=DataEncoder)
