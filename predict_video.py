@@ -25,6 +25,8 @@ ap.add_argument("-o", "--output", required=True,
 ap.add_argument("-s", "--size", type=int, default=128,
 	help="size of queue for averaging")
 ap.add_argument("-a", "--action", required=True, help="choose a predictive action from the list [drinking, cooking]")
+ap.add_argument("-f", "--fig", help="figure name", default="fig")
+ap.add_argument("-j", "--json", help="json file", default="json")
 args = ap.parse_args()
 
 # load the trained model and label binarizer from disk
@@ -65,8 +67,10 @@ while True:
 	# perform mean subtraction
 	output = frame.copy()
 	# output = cv2.resize(frame.copy(), (244,244))
+
 	wShape = frame.shape[1]
 	frame = frame[:wShape, :,:]
+	#print(frame.shape)
 	frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 	frame = cv2.resize(frame, (224, 224)).astype("float32")
 	frame -= mean
@@ -121,7 +125,7 @@ vs.release()
 
 # creating json file as: timeLabel.json
 print("[INFO] writing json time-label...")
-to_json_file(args.action, timeStamps)
+to_json_file(args.action, timeStamps, args.json)
 
 print("[INFO] saving time-label figure to the folder...")
 x_p = [item[0] for item in timeStamps]
@@ -129,7 +133,7 @@ y_p = [item[1] for item in timeStamps]
 x_np_param = np.array(x_p)
 y_np_param = np.array(y_p)
 
-fig_plot(x_np_param, y_np_param, args.action)
+fig_plot(x_np_param, y_np_param, args.action, args.fig)
 
 print("[INFO] DONE...")
 
@@ -137,4 +141,7 @@ print("[INFO] DONE...")
 
 
 
-# python predict_video.py --model model/model_v5/activity.model --label-bin model/model_v5/lb.pickle --input example_clips/v5/cook5.mp4 --output output/output_v5/c5_v5.avi --action cooking --size 128
+# python predict_video.py --model model/activity.model --label-bin model/lb.pickle --input example_clips/drink_test/$(basename $file) --fig $(basename $file) --json $(basename $file) --output output/$(basename $file) --action drinking --size 128
+
+
+# python predict_video.py --model model/activity.model --label-bin model/lb.pickle --input example_clips/drink_test/1900_1.mkv --fig 1900_1 --json 1900_1 --output output/1900_1.avi --action drinking --size 128
