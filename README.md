@@ -13,6 +13,8 @@ Action Recognition Deep Learning Project
 - `"-o", "--output":` path to our output video (e.g. `output/myVideo.avi`)
 - `"-s", "--size":` size of queue for averaging (e.g. 128)
 - `"-a", "--action":` choose a predictive action from this list (`drinking, cooking`). This name will be used in labeling the JSON file and the output figure y_label.
+- `"-f", "--fig":` fig name
+- `"-j", "--json":` JSON file name
 ***
 
 ### Instruction Video: [LINK](https://youtu.be/Dvp9Gt67u_0)
@@ -34,8 +36,8 @@ Download these two video samples and place them in 'example_clips' folder.
 - Create a folder called `example_clips` and put the above 'video samples' together with your test videos in it.
 
 #### **Running Drinking Activity**
-`python predict_video.py --model model/activity.model --label-bin model/lb.pickle --input example_clips/` **VIDEO-NAME** `--output output/output_video.avi --action drinking --size 128`
+`python predict_video.py --model model/activity.model --label-bin model/lb.pickle --input example_clips/` **VIDEO-NAME** `--output output/output_video.avi --fig TimeLabel --json TimeLabel --action drinking --size 128`
 
 #### **Running Cooking Activity**
-`python predict_video.py --model model/activity.model --label-bin model/lb.pickle --input example_clips/` **VIDEO-NAME** `--output output/output_video.avi --action cooking --size 128`
+`python predict_video.py --model model/activity.model --label-bin model/lb.pickle --input example_clips/` **VIDEO-NAME** `--output output/output_video.avi --fig TimeLabel --json TimeLabel --action cooking --size 128`
 ***
