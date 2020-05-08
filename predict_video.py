@@ -65,6 +65,8 @@ while True:
 	# perform mean subtraction
 	output = frame.copy()
 	# output = cv2.resize(frame.copy(), (244,244))
+	wShape = frame.shape[1]
+	frame = frame[:wShape, :,:]
 	frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 	frame = cv2.resize(frame, (224, 224)).astype("float32")
 	frame -= mean
