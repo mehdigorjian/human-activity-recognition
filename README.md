@@ -1,5 +1,5 @@
 # Activity Recognition
-Action Recognition Deep Learning Project
+Action Recognition Deep Learning Project (recognizing drinking and cooking)
 
 ### Requirements
 
