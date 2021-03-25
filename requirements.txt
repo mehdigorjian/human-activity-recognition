@@ -11,7 +11,7 @@ opencv-contrib-python==4.2.0.32
 opencv-python-headless==4.2.0.32
 pickle5==0.0.9
 Pillow==7.0.0
-PyYAML==5.3
+PyYAML==5.4
 ruamel.yaml==0.15.89
 scikit-learn==0.22.1
 scipy==1.4.1
