@@ -15,7 +15,6 @@ Action Recognition Deep Learning Project (recognizing drinking and cooking)
 - `"-a", "--action":` choose a predictive action from this list (`drinking, cooking`). This name will be used in labeling the JSON file and the output figure y_label.
 - `"-f", "--fig":` fig name
 - `"-j", "--json":` JSON file name
-***
 
 ***
 
