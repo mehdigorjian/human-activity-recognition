@@ -17,8 +17,6 @@ Action Recognition Deep Learning Project (recognizing drinking and cooking)
 - `"-j", "--json":` JSON file name
 ***
 
-### Instruction Video: [YouTube Link](https://youtu.be/Dvp9Gt67u_0)
-
 ***
 
 ### **Video Samples**
