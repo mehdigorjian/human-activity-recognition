@@ -13,7 +13,7 @@ Action Recognition Deep Learning Project (recognizing drinking and cooking)
 - `"-o", "--output":` path to our output video (e.g. `output/myVideo.avi`)
 - `"-s", "--size":` size of queue for averaging (e.g. 128)
 - `"-a", "--action":` choose a predictive action from this list (`drinking, cooking`). This name will be used in labeling the JSON file and the output figure y_label.
-- `"-f", "--fig":` fig name
+- `"-f", "--fig":` figure name
 - `"-j", "--json":` JSON file name
 
 ***
