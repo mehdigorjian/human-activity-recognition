@@ -28,7 +28,7 @@ Download these two video samples and place them in 'example_clips' folder.
 
 ### **Pre-Runing Instruction**
 
-- Create a folder called `model`, download the[>>download link<<] [**pre-trained model**] (https://drive.google.com/file/d/1GRIbAtAXXNm6RIBFTiVsyDVhl4VhTQoX/view?usp=sharing) and the **binarized Labels** [>>download link<<](https://drive.google.com/file/d/1AXemNFTtLYiLy8fyQ9S102v4YkxhHPHB/view?usp=sharing) add place them into the **model** folder.
+- Create a folder called `model`, download the >>download link<< [pre-trained model] (https://drive.google.com/file/d/1GRIbAtAXXNm6RIBFTiVsyDVhl4VhTQoX/view?usp=sharing) and the **binarized Labels** [>>download link<<](https://drive.google.com/file/d/1AXemNFTtLYiLy8fyQ9S102v4YkxhHPHB/view?usp=sharing) add place them into the **model** folder.
 - Create a folder called `output` for the code output.
 - Create a folder called `example_clips` and put the above 'video samples' together with your test videos in it.
 
